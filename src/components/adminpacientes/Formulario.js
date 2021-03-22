@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import {Label, Error} from './styles/Admin';
+import {v4 as uuid} from 'uuid';
+import {Label, Error, Input} from './styles/Admin';
 
 const Formulario = () => {
 
@@ -36,7 +37,11 @@ const Formulario = () => {
             return;
         }
 
+        //Eliminar el mensaje previo
+        actualizarError(false);
+
         //Asignar un ID
+        cita.id = uuid();
 
         //Crear la cita
 
@@ -74,7 +79,7 @@ const Formulario = () => {
                     />
 
                     <Label>Fecha</Label>
-                    <input
+                    <Input
                         type="date"
                         name="fecha"
                         className="u-full-width"
@@ -83,7 +88,7 @@ const Formulario = () => {
                     />
 
                     <Label>Hora</Label>
-                    <input
+                    <Input
                         type="time"
                         name="hora"
                         className="u-full-width"
