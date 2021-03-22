@@ -1,4 +1,5 @@
 import React from 'react';
+import {Label} from './styles/Admin';
 
 const Formulario = () => {
     return (
@@ -6,7 +7,7 @@ const Formulario = () => {
             <h2>Crear cita</h2>
 
             <form>
-                    <label>Nombre mascota</label>
+                    <Label>Nombre mascota</Label>
                     <input
                         type="text"
                         name="mascota"
@@ -14,7 +15,7 @@ const Formulario = () => {
                         placeholder="Nombre Mascota"
                     />
 
-                    <label>Nombre dueño</label>
+                    <Label>Nombre dueño</Label>
                     <input
                         type="text"
                         name="propietario"
@@ -22,21 +23,21 @@ const Formulario = () => {
                         placeholder="Nombre Dueño de la mascota"
                     />
 
-                    <label>Fecha</label>
+                    <Label>Fecha</Label>
                     <input
                         type="date"
                         name="fecha"
                         className="u-full-width"
                     />
 
-                    <label>Hora</label>
+                    <Label>Hora</Label>
                     <input
                         type="time"
                         name="hora"
                         className="u-full-width"
                     />
 
-                    <label>Síntomas</label>
+                    <Label>Síntomas</Label>
                     <textarea
                         className="u-full-width"
                         name="sintomas"
