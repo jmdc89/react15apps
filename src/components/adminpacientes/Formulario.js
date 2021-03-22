@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Label} from './styles/Admin';
+import {Label, Error} from './styles/Admin';
 
 const Formulario = () => {
 
@@ -10,7 +10,10 @@ const Formulario = () => {
         fecha: '',
         hora: '',
         sintomas: ''
-    })
+    });
+
+    const [error, actualizarError] = useState(false)
+
 
     //Funcion que se ejecuta cada vez que el usuario escribe en un input
     const actualizarState = e => {
@@ -24,10 +27,14 @@ const Formulario = () => {
     const {mascota, propietario, fecha, hora, sintomas} = cita;
 
     // Cuando el usuario presiona agregar cita
-    const SubmitCita = e => {
+    const submitCita = e => {
         e.preventDefault();
-        
+
         //Validar
+        if(mascota.trim() === '' || propietario.trim() === '' || fecha.trim() === '' || hora.trim() === '' || sintomas.trim() === '' ){
+            actualizarError(true);
+            return;
+        }
 
         //Asignar un ID
 
@@ -40,6 +47,8 @@ const Formulario = () => {
     return (
         <>
             <h2>Crear cita</h2>
+
+            { error ? <Error>Todos los campos son obligatorios</Error> : null}
 
             <form
                 onSubmit={submitCita}
