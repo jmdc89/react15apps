@@ -51,3 +51,9 @@ export const Citadiv = styled.div`
     border-bottom-right-radius: 1rem;
     }
 `;
+
+export const ButtonEliminar = styled.button`
+    background-color: #c10059;
+    color: white;
+    margin-top: 2rem;
+`;
