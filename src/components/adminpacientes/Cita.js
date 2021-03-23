@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import {Citadiv, ButtonEliminar} from './styles/Admin';
 
@@ -16,5 +17,10 @@ const Cita = ({cita, eliminarCita}) => (
         >Eliminar &times;</ButtonEliminar>
     </Citadiv>
 );
+
+Cita.propTypes = {
+    cita: PropTypes.object.isRequired,
+    eliminarCita: PropTypes.func.isRequired
+}
 
 export default Cita;
