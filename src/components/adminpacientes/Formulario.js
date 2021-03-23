@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {v4 as uuid} from 'uuid';
 import {Label, Error, Input} from './styles/Admin';
 
-const Formulario = () => {
+const Formulario = ({crearCita}) => {
 
 
     const [cita, actualizarCita] = useState({
@@ -44,8 +44,16 @@ const Formulario = () => {
         cita.id = uuid();
 
         //Crear la cita
+        crearCita(cita);
 
         //Reiniciar el form
+        actualizarCita({
+            mascota: '',
+            propietario: '',
+            fecha: '',
+            hora: '',
+            sintomas: ''
+        })
 
     }
 
