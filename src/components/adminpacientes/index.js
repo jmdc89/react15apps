@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import Formulario from "./Formulario";
+import Cita from "./Cita";
 
 function Admin() {
 
@@ -26,7 +27,13 @@ function Admin() {
                />
             </div>
             <div className="one-half column">
-            <h1>2</h1>
+              <h2>Aministra tus citas</h2>
+              {citas.map(cita => (
+                <Cita
+                  key={cita.id}
+                  cita={cita}
+                />
+              ))}
             </div>
         </div>
     </div>

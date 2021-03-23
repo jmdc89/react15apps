@@ -24,3 +24,30 @@ export const Input = styled.input`
     box-shadow: none;
     box-sizing: border-box;
 `;
+
+export const Citadiv = styled.div`
+    text-transform: capitalize;
+    padding: 2rem;
+    background: white;
+    border-bottom: 1px solid #e1e1e1;
+    color: black;
+
+    p {
+    font-weight: bold;
+    margin-bottom: .8rem;
+    }
+
+    p span {
+    font-weight: normal;
+    }
+
+    :first-of-type {
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    }
+
+    :last-of-type {
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    }
+`;
