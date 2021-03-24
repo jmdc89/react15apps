@@ -75,4 +75,13 @@ export const AlertPrimary = styled.div`
     border-color: #b8daff;
 `;
 
-
+export const AlertColor = styled.div`
+    position: relative;
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    color: ${(props) => props.color};
+    background-color: ${(props) => props.background};
+    border-color: ${(props) => props.border};
+`;
