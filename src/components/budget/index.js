@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Question from './Question';
 import Form from './Form';
 import List from './List';
@@ -15,13 +15,26 @@ function Budget() {
     const [ gasto, guardarGasto ] = useState({});
     const [ creargasto, guardarCrearGasto ] = useState(false);
 
-    //Cuando agreguemos un nuevo gasto
-    const agregarNuevoGasto = gasto => {
-        guardarGastos([
-            ...gastos,
-            gasto
-        ])
-    }
+    useEffect(() => {
+        if(creargasto) {
+  
+            // agrega el nuevo presupuesto
+            guardarGastos([
+              ...gastos,
+              gasto
+            ]);
+  
+            // resta del presupuesto actual
+            const presupuestoRestante = restante - gasto.cantidad;
+            guardarRestante(presupuestoRestante);
+  
+            // Resetear a false
+            guardarCrearGasto(false);
+        }
+    }, [gasto, creargasto, gastos, restante]);
+  
+
+
 
     return (
         <div className="container">
@@ -42,7 +55,8 @@ function Budget() {
                         <div className="row">
                             <div className="one-half column">
                                 <Form
-                                    agregarNuevoGasto={agregarNuevoGasto}
+                                    guardarGasto={guardarGasto}
+                                    guardarCrearGasto={guardarCrearGasto}
                                 />
                             </div>
 
