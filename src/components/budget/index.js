@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import Question from './Question';
+import Form from './Form';
 import {Contenido} from './styles/Budget.js';
 
 function Budget() {
@@ -17,7 +18,17 @@ function Budget() {
                    <Question
                     guardarPresupuesto={guardarPresupuesto}
                     guardarRestante={guardarRestante}
-                   /> 
+                   />
+
+                   <div className="row">
+                       <div className="one-half column">
+                           <Form/>
+                       </div>
+
+                       <div className="one-half column">
+                           2
+                       </div>
+                   </div>
                 </Contenido>
                 
 
