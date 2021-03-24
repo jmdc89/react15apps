@@ -56,3 +56,23 @@ export const GastosRealizados = styled.div`
   }
 `;
 
+export const Alert = styled.div`
+    position: relative;
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+`;
+
+export const AlertPrimary = styled.div`
+    position: relative;
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    color: #004085;
+    background-color: #cce5ff;
+    border-color: #b8daff;
+`;
+
+

@@ -7,11 +7,10 @@ const List = ({gastos}) => (
         <h2>Listado</h2>
         {gastos.map(gasto => (
             <Expense
-               key={gasto.id}
-               gasto={gasto}
+                key={gasto.id}
+                gasto={gasto}
             />
         ))}
-
     </GastosRealizados>
 );
  

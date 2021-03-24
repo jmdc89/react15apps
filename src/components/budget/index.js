@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import Question from './Question';
 import Form from './Form';
 import List from './List';
+import BudgetControl from './BudgetControl';
 import {Contenido} from './styles/Budget.js';
 
 function Budget() {
@@ -11,6 +12,8 @@ function Budget() {
     const [ restante, guardarRestante] = useState(0);
     const [mostrarpregunta, actualizarPregunta] = useState(true);
     const [gastos, guardarGastos] = useState([]);
+    const [ gasto, guardarGasto ] = useState({});
+    const [ creargasto, guardarCrearGasto ] = useState(false);
 
     //Cuando agreguemos un nuevo gasto
     const agregarNuevoGasto = gasto => {
@@ -46,6 +49,10 @@ function Budget() {
                             <div className="one-half column">
                                 <List
                                     gastos={gastos}
+                                />
+                                <BudgetControl
+                                    presupuesto={presupuesto}
+                                    restante={restante}
                                 />
                             </div>
                         </div>
