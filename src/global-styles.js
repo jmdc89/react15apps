@@ -7,12 +7,14 @@ export const GlobalStyles = createGlobalStyle`
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      background-image: linear-gradient(-225deg, #A445B2 0%, #D41872 52%, #FF0066 100%);
+      font-family: 'Raleway', Helvetica, Arial, sans-serif;
+      background: #000428;  /* fallback for old browsers */
+      background: -webkit-linear-gradient(to right, #004e92, #000428);  
+      background: linear-gradient(to right, #004e92, #000428); 
       color: #333333;
       min-height: 100%;
       padding-bottom: 5rem;
-      text-transform: uppercase;
+      text-transform: capitalize;
       
     }
     h1, h2  {
@@ -26,3 +28,4 @@ export const GlobalStyles = createGlobalStyle`
       font-size: 3rem;
     }
 `;
+
