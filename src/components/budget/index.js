@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import Question from './Question';
 import Form from './Form';
+import List from './List';
 import {Contenido} from './styles/Budget.js';
 
 function Budget() {
@@ -43,7 +44,9 @@ function Budget() {
                             </div>
 
                             <div className="one-half column">
-                                2
+                                <List
+                                    gastos={gastos}
+                                />
                             </div>
                         </div>
                     )

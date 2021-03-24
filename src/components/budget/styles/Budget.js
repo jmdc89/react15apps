@@ -27,3 +27,32 @@ export const ErrorBudget = styled.p`
     border-color: #f5c6cb;
     text-align: center;
 `;
+
+export const GastosRealizados = styled.div`
+    margin-bottom: 2rem;
+
+    li{
+    list-style: none;
+    margin-bottom: 0rem;
+    border-bottom: 1px solid #e1e1e1;
+    padding: 1rem 0;
+     }
+
+     li:last-of-type {
+    margin-bottom: 0!important;
+    }
+
+    li p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin:0;
+    }
+
+    li p .gasto {
+    background-color: #004085;
+    padding: 1rem;
+    color:white;
+  }
+`;
+

@@ -57,9 +57,9 @@ const Form = ({agregarNuevoGasto}) => {
             <div className="campo">
                 <label>Cantidad Gasto</label>
                 <input
-                    type="text"
+                    type="number"
                     className="u-full-width"
-                    placeholder="Ej. Transporte"
+                    placeholder="Ej. 300"
                     value={cantidad}
                     onChange={e => guardarCantidad(parseInt(e.target.value, 10))}
                 />
