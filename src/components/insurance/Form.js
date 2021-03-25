@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import styled from 'styled-components/macro';
+import { obtenerDiferenciaYear, calcularMarca, obtenerPlan } from './helper';
 
 const Campo = styled.div`
     display: flex;
@@ -48,7 +49,7 @@ const Error = styled.div`
     margin-bottom: 2rem;
 `;
 
-const Form = () => {
+const Form = ({guardarResumen}) => {
 
     const [ datos, guardarDatos ] = useState({
         marca: '',
@@ -80,23 +81,23 @@ const Form = () => {
         guardarError(false);
 
         // // Una base de 2000
-        // let resultado = 2000;
+        let resultado = 2000;
 
         // // obtener la diferencia de años
-        // const diferencia = obtenerDiferenciaYear(year);
+        const diferencia = obtenerDiferenciaYear(year);
 
         // // por cada año hay que restar el 3%
-        // resultado -= (( diferencia * 3 ) * resultado) / 100;
+        resultado -= (( diferencia * 3 ) * resultado) / 100;
 
         // // Americano 15
         // // Asiatico 5%
         // // Europeo 30%
-        // resultado = calcularMarca(marca) * resultado;
+        resultado = calcularMarca(marca) * resultado;
 
         // // Basíco aumenta 20%
         // // Completo 50%
-        // const incrementoPlan = obtenerPlan(plan);
-        // resultado = parseFloat( incrementoPlan * resultado ).toFixed(2);
+        const incrementoPlan = obtenerPlan(plan);
+        resultado = parseFloat( incrementoPlan * resultado ).toFixed(2);
 
         // guardarCargando(true);
 
@@ -106,10 +107,10 @@ const Form = () => {
         //     guardarCargando(false);
 
         //     // pasa la información al componente principal
-        //     guardarResumen({
-        //         cotizacion: Number(resultado),
-        //         datos
-        //     });
+            guardarResumen({
+                cotizacion: Number(resultado),
+                datos
+            });
         // }, 3000);
 
     }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Header from './Header';
 import Form from './Form';
 import styled from 'styled-components/macro';
@@ -13,6 +13,21 @@ const ContenedorFormulario = styled.div`
 `;
 
 const Insurance = () => {
+
+    const [ resumen, guardarResumen] = useState({
+        cotizacion: 0,
+        datos: {
+          marca: '',
+          year: '',
+          plan: ''
+        }
+    });
+  
+    const [ cargando, guardarCargando] = useState(false);
+  
+    // extraer datos
+    const { cotizacion, datos } = resumen;
+
     return (
         <Contenedor>
            <Header
@@ -20,7 +35,9 @@ const Insurance = () => {
             /> 
 
             <ContenedorFormulario>
-                <Form />
+                <Form
+                guardarResumen={guardarResumen}
+                />
             </ContenedorFormulario>
         </Contenedor>
         
