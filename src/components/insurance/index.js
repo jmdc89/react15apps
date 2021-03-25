@@ -1,8 +1,11 @@
 import React from 'react';
+import Header from './Header';
 
 const Insurance = () => {
     return (
-        <h1>Cotizador</h1>
+        <Header
+            titulo='Cotizador de Seguros'
+        />
     );
 }
  
