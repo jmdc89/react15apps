@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components/macro';
 
 const Campo = styled.div`
@@ -32,7 +32,7 @@ const Boton = styled.button`
     transition: background-color .3s ease;
     margin-top: 2rem;
     line-height: 0px;
-    
+
     &:hover {
         background-color: #26C6DA;
         cursor: pointer;
@@ -49,11 +49,35 @@ const Error = styled.div`
 `;
 
 const Form = () => {
+
+    const [ datos, guardarDatos ] = useState({
+        marca: '',
+        year: '',
+        plan: ''
+    });
+    const [ error, guardarError ] = useState(false);
+
+    // extraer los valores del state
+    const { marca, year, plan } = datos;
+
+     // Leer los datos del formulario y colocarlos en el state
+     const obtenerInformacion = e => {
+        guardarDatos({
+            ...datos,
+            [e.target.name] : e.target.value
+        })
+    }
+
+
     return (
         <form>
             <Campo>
                 <Label>Marca</Label>
-                <Select>
+                <Select
+                    name="marca"
+                    value={marca}
+                    onChange={obtenerInformacion}
+                >
                     <option value="">-- Seleccione --</option>
                     <option value="americano">Americano</option>
                     <option value="europeo">Europeo</option>
@@ -65,8 +89,8 @@ const Form = () => {
                 <Label>Año</Label>
                 <Select
                     name="year"
-                    // value={year}
-                    // onChange={obtenerInformacion}
+                    value={year}
+                    onChange={obtenerInformacion}
                 >
                     <option value="">-- Seleccione --</option>
                     <option value="2021">2021</option>
@@ -88,16 +112,16 @@ const Form = () => {
                     type="radio"
                     name="plan"
                     value="basico"
-                    // checked={plan === "basico"}
-                    // onChange={obtenerInformacion}
+                    checked={plan === "basico"}
+                    onChange={obtenerInformacion}
                 /> Básico
 
                 <InputRadio
                     type="radio"
                     name="plan"
                     value="completo"
-                    // checked={plan === "completo"}
-                    // onChange={obtenerInformacion}
+                    checked={plan === "completo"}
+                    onChange={obtenerInformacion}
                 /> Completo
             </Campo>
 
