@@ -75,13 +75,36 @@ export const AlertPrimary = styled.div`
     border-color: #b8daff;
 `;
 
-export const AlertColor = styled.div`
+export const AlertDanger = styled.div`
     position: relative;
     padding: .75rem 1.25rem;
     margin-bottom: 1rem;
     border: 1px solid transparent;
     border-radius: .25rem;
-    color: ${(props) => props.color};
-    background-color: ${(props) => props.background};
-    border-color: ${(props) => props.border};
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
 `;
+
+export const AlertWarning = styled.div`
+    position: relative;
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    color: #856404;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+`;
+
+export const AlertSuccess = styled.div`
+    position: relative;
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+`;
+
