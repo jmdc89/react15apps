@@ -3,6 +3,7 @@ import Header from './Header';
 import Form from './Form';
 import Resumen from './Resum';
 import Resultado from './Result';
+import Spinner from './Spinner';
 import styled from 'styled-components/macro';
 
 const Contenedor = styled.div`
@@ -39,13 +40,21 @@ const Insurance = () => {
             <ContenedorFormulario>
                 <Form
                 guardarResumen={guardarResumen}
+                guardarCargando={guardarCargando}
                 />
+                
+                { cargando ? <Spinner/> : null }
+                
                 <Resumen
                     datos={datos}
                 />
-                <Resultado
-                    cotizacion={cotizacion}
-                />
+
+                { !cargando ?
+                    <Resultado
+                        cotizacion={cotizacion}
+                    /> : null
+                }
+                
             </ContenedorFormulario>
         </Contenedor>
         
