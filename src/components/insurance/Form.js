@@ -68,9 +68,59 @@ const Form = () => {
         })
     }
 
+    // cuando el usuario presiona submit
+    const cotizarSeguro = e => {
+        e.preventDefault();
+
+        if(marca.trim() === '' || year.trim() === '' || plan.trim() === '') {
+            guardarError(true);
+            return;
+        }
+
+        guardarError(false);
+
+        // Una base de 2000
+        let resultado = 2000;
+
+        // obtener la diferencia de años
+        const diferencia = obtenerDiferenciaYear(year);
+
+        // por cada año hay que restar el 3%
+        resultado -= (( diferencia * 3 ) * resultado) / 100;
+
+        // Americano 15
+        // Asiatico 5%
+        // Europeo 30%
+        resultado = calcularMarca(marca) * resultado;
+
+        // Basíco aumenta 20%
+        // Completo 50%
+        const incrementoPlan = obtenerPlan(plan);
+        resultado = parseFloat( incrementoPlan * resultado ).toFixed(2);
+
+        guardarCargando(true);
+
+        setTimeout(() => {
+
+            // Elimina el spinner
+            guardarCargando(false);
+
+            // pasa la información al componente principal
+            guardarResumen({
+                cotizacion: Number(resultado),
+                datos
+            });
+        }, 3000);
+
+    }
 
     return (
-        <form>
+        <form
+            onSubmit={cotizarSeguro}
+        >
+
+            { error ? <Error>Todos los campos son obligatorios</Error>  : null }
+
             <Campo>
                 <Label>Marca</Label>
                 <Select
@@ -125,7 +175,7 @@ const Form = () => {
                 /> Completo
             </Campo>
 
-            <Boton type="button">Cotizar</Boton>
+            <Boton type="submit">Cotizar</Boton>
 
         </form>
     );
