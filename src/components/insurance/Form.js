@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import styled from 'styled-components/macro';
 import { obtenerDiferenciaYear, calcularMarca, obtenerPlan } from './helper';
+import PropTypes from 'prop-types';
 
 const Campo = styled.div`
     display: flex;
@@ -180,6 +181,11 @@ const Form = ({guardarResumen, guardarCargando}) => {
 
         </form>
     );
+}
+
+Form.propTypes = {
+    guardarResumen: PropTypes.func.isRequired,
+    guardarCargando: PropTypes.func.isRequired
 }
  
 export default Form;
