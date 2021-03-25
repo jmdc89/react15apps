@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 import PropTypes from 'prop-types';
-import { primerMayuscula } from '../helper';
+import { primerMayuscula } from './helper';
 
 const ContenedorResumen = styled.div`
     padding: 1rem;

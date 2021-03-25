@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import Header from './Header';
 import Form from './Form';
+import Resumen from './Resum';
 import styled from 'styled-components/macro';
 
 const Contenedor = styled.div`
@@ -37,6 +38,9 @@ const Insurance = () => {
             <ContenedorFormulario>
                 <Form
                 guardarResumen={guardarResumen}
+                />
+                <Resumen
+                    datos={datos}
                 />
             </ContenedorFormulario>
         </Contenedor>
