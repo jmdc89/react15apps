@@ -1,5 +1,6 @@
 import React from 'react';
 import {AlertPrimary, AlertWarning, AlertSuccess, AlertDanger} from './styles/Budget';
+import PropTypes from 'prop-types';
 
 const BudgetControl = ({presupuesto, restante}) => {
 
@@ -10,24 +11,28 @@ const BudgetControl = ({presupuesto, restante}) => {
             </AlertPrimary>
 
             {
-            ( ( presupuesto*0.75) > restante )?
-                <AlertSuccess>
+            ( restante < (presupuesto/4) )?
+                <AlertDanger>
                 Restante: $ {restante}
-                </AlertSuccess>
+                </AlertDanger>
             :
             
-            ( (presupuesto / 2) > restante )?
+            ( restante < (presupuesto/2) )?
                 <AlertWarning>
                 Restante: $ {restante}
                 </AlertWarning>
             :
                 <AlertSuccess>
-                Restante: $ {restante}
+                    Restante: $ {restante}
                 </AlertSuccess>
-            }
-
+            }    
         </>
     );
+}
+
+BudgetControl.propTypes = {
+    presupuesto: PropTypes.number.isRequired,
+    restante: PropTypes.number.isRequired
 }
  
 export default BudgetControl;

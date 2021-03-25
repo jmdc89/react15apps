@@ -1,6 +1,7 @@
 import React from 'react';
 import Expense from './Expense';
 import {GastosRealizados} from './styles/Budget';
+import PropTypes from 'prop-types';
 
 const List = ({gastos}) => (
     <GastosRealizados>
@@ -13,5 +14,9 @@ const List = ({gastos}) => (
         ))}
     </GastosRealizados>
 );
+
+List.propTypes = {
+    gastos: PropTypes.array.isRequired
+}
  
 export default List;
