@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import Header from './Header';
 import Form from './Form';
 import Resumen from './Resum';
+import Resultado from './Result';
 import styled from 'styled-components/macro';
 
 const Contenedor = styled.div`
@@ -41,6 +42,9 @@ const Insurance = () => {
                 />
                 <Resumen
                     datos={datos}
+                />
+                <Resultado
+                    cotizacion={cotizacion}
                 />
             </ContenedorFormulario>
         </Contenedor>
