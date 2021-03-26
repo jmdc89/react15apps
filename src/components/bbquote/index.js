@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Frase from './Frase';
 import styled from 'styled-components/macro';
 import './index.css';
@@ -40,6 +40,12 @@ const BreakingBad = () => {
         const frase = await api.json()
         guardarFrase(frase[0]);
     }
+
+    // Cargar una frase
+    useEffect( () => {
+        consultarAPI()
+      }, []);
+    
 
     return (
            <Contenedor>

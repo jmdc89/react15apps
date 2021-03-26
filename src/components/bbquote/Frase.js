@@ -7,7 +7,7 @@ const ContenedorFrase = styled.div`
     background-color: #fff !important;
     max-width:80vw !important;
     margin-bottom: 1rem !important;
-       
+
     h1 {
         font-family: Arial, Helvetica, sans-serif;
         font-size: 2rem;
@@ -37,6 +37,7 @@ const ContenedorFrase = styled.div`
 `;
 
 const Frase = ({frase}) => {
+
     return (
 
         <ContenedorFrase>
