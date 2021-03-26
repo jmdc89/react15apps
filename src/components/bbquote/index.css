@@ -1,31 +1,31 @@
 html {
-    box-sizing: border-box;
+    box-sizing: border-box !important;
   }
   *, *:before, *:after {
-    box-sizing: inherit;
+    box-sizing: inherit !important;
   }
   * {
-    margin:0 ;
+    margin:0 !important;
   }
   html {
-    height: 100%;
+    height: 100% !important;
   }
   body {
-    background-image: url(logo.svg), -webkit-linear-gradient(top left, #007d35 0%, #007d35 40%, #0f574e 100%);
-    min-height: 100%;
-    background-position: center 80px, center center;
-    background-repeat:no-repeat;
-    background-size: 300px, 100% 100%;
-    display: flex;
-    align-items: flex-end;
+    background-image: url(logo.svg), -webkit-linear-gradient(top left, #007d35 0%, #007d35 40%, #0f574e 100%) !important;
+    min-height: 100% !important;
+    background-position: center 80px, center center !important;
+    background-repeat:no-repeat !important;
+    background-size: 300px, 100% 100% !important;
+    display: flex !important;
+    align-items: flex-end !important;
   }
   @media (min-width:768px) {
     body {
-      align-items: center;
-      background-size: 400px, 100% 100%;
+      align-items: center !important;
+      background-size: 400px, 100% 100% !important;
     }
   }
   
   #root {
-    width: 100%;
+    width: 100% !important;
   }
