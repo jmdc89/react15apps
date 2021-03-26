@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/macro';
+import './index.css';
 
 const Contenedor = styled.div`
   display: flex;
@@ -18,6 +19,8 @@ const Boton = styled.button`
   font-size: 2rem;
   border: 2px solid black;
   transition: background-size .8s ease;
+  line-height: 0;
+  text-transform: capitalize !important;
   :hover {
     cursor:pointer;
     background-size: 400px;
@@ -26,7 +29,11 @@ const Boton = styled.button`
 
 const BreakingBad = () => {
     return (
-        <h1>Breaking bad</h1>
+        <Contenedor>
+           <Boton>
+            Obtener Frase
+            </Boton>    
+        </Contenedor>
     );
 }
  
