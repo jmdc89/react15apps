@@ -1,31 +1,31 @@
 html {
-    box-sizing: border-box !important;
+    box-sizing: border-box;
   }
   *, *:before, *:after {
-    box-sizing: inherit !important;
+    box-sizing: inherit;
   }
   * {
-    margin:0 !important;
+    margin:0;
   }
   html {
-    height: 100% !important;
+    height: 100%;
   }
   body {
-    background-image: url(logo.svg), -webkit-linear-gradient(top left, #007d35 0%, #007d35 40%, #0f574e 100%) !important;
-    min-height: 100% !important;
+    background-image: url(logobb.svg), -webkit-linear-gradient(top left, #007d35 0%, #007d35 40%, #0f574e 100%) !important;
+    min-height: 100%;
     background-position: center 80px, center center !important;
     background-repeat:no-repeat !important;
     background-size: 300px, 100% 100% !important;
-    display: flex !important;
-    align-items: flex-end !important;
+    display: flex;
+    align-items: flex-end;
   }
   @media (min-width:768px) {
     body {
-      align-items: center !important;
-      background-size: 400px, 100% 100% !important;
+      align-items: center;
+      background-size: 400px, 100% 100%;
     }
   }
   
   #root {
-    width: 100% !important;
+    width: 100%;
   }

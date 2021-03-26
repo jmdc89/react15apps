@@ -3,6 +3,8 @@ import Frase from './Frase';
 import styled from 'styled-components/macro';
 import './index.css';
 
+
+
 const Contenedor = styled.div`
   display: flex;
   align-items: center;
@@ -40,7 +42,7 @@ const BreakingBad = () => {
     }
 
     return (
-        <Contenedor>
+           <Contenedor>
             <Frase
                 frase={frase}
             />
@@ -49,7 +51,7 @@ const BreakingBad = () => {
            >
             Obtener Frase
             </Boton>    
-        </Contenedor>
+        </Contenedor>   
     );
 }
  
