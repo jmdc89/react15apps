@@ -4,7 +4,7 @@ import {GlobalStyles} from './global-styles';
 // import Admin from "./components/adminpacientes";
 // import Budget from "./components/budget";
 // import Insurance from "./components/insurance";
-import BreakingBad from "./components/bbquote";
+// import BreakingBad from "./components/bbquote";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -12,7 +12,7 @@ ReactDOM.render(
     {/* <Admin/> */}
     {/* <Budget/> */}
     {/* <Insurance/> */}
-    <BreakingBad/>
+    {/* <BreakingBad/> */}
   </React.StrictMode>,
   document.getElementById('root')
 );
