@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 import imagen from '../../cryptomonedas.png';
+import Formulario from "./Formulario";
 
 
 const Contenedor = styled.div`
@@ -45,7 +46,8 @@ const Cotizador = () => {
           />
         </div>
         <div>
-            <Heading>Cotiza Criptomonedas al Instante</Heading>   
+            <Heading>Cotiza Criptomonedas al Instante</Heading>
+            <Formulario />
         </div>
     </Contenedor>
     );
