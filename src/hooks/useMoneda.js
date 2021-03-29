@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components/macro';
 
 const Label = styled.label`
@@ -27,7 +27,7 @@ const useMoneda = (label, stateInicial, opciones) => {
     const [state, actualizarState] = useState(stateInicial);
 
     const Seleccionar = () => (
-        <Fragment>
+        <>
             <Label>{label}</Label>
             <Select
                 onChange={ e => actualizarState(e.target.value)}
@@ -38,7 +38,7 @@ const useMoneda = (label, stateInicial, opciones) => {
                     <option key={opcion.codigo} value={opcion.codigo}>{opcion.nombre}</option>
                 ))}
             </Select>
-        </Fragment>
+        </>
     );
 
     // Retornar state, interfaz y fn que modifica el state
