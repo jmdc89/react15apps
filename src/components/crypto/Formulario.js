@@ -53,9 +53,25 @@ const Formulario = () => {
         consultarAPI();
     }, []);
 
+    // cuando el usuario hace submit
+    const cotizarMoneda = e => {
+        e.preventDefault();
+
+        if(moneda === '' || criptomoneda === '') {
+            guardarError(true);
+            return;
+        }
+
+        guardarError(false);
+    }
+
 
     return (
-        <form>
+        <form
+            onSubmit={cotizarMoneda}
+        >
+            {error ? 'Hay un error': null}
+
             <SelectMonedas />
 
             <SelectCripto />
