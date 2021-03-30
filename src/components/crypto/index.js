@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import styled from 'styled-components/macro';
 import imagen from '../../cryptomonedas.png';
 import Formulario from "./Formulario";
+import Cotizacion from "./Cotizacion";
 import axios from 'axios';
 
 
@@ -87,6 +88,10 @@ const Cotizador = () => {
             <Formulario 
               guardarMoneda={guardarMoneda}
               guardarCriptomoneda={guardarCriptomoneda}
+            />
+
+            <Cotizacion
+              resultado={resultado}
             />
         </div>
     </Contenedor>
