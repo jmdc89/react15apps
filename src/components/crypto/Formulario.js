@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components/macro';
 
 import useMoneda from '../../hooks/useMoneda';
+import useCriptomoneda from '../../hooks/useCriptomoneda';
 
 const Boton = styled.input`
     margin-top: 20px;
