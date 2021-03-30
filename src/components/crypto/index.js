@@ -4,6 +4,7 @@ import imagen from '../../cryptomonedas.png';
 import Formulario from "./Formulario";
 import Cotizacion from "./Cotizacion";
 import axios from 'axios';
+import Spinner from './Spinner';
 
 
 const Contenedor = styled.div`
@@ -73,6 +74,9 @@ const Cotizador = () => {
     }
     cotizarCriptomoneda();
 }, [moneda, criptomoneda]);
+
+   // Mostrar spinner o resultado
+   const componente = (cargando) ? <Spinner /> :  <Cotizacion  resultado={resultado} />
   
 
     return (  
@@ -90,9 +94,8 @@ const Cotizador = () => {
               guardarCriptomoneda={guardarCriptomoneda}
             />
 
-            <Cotizacion
-              resultado={resultado}
-            />
+            {componente}
+
         </div>
     </Contenedor>
     );
