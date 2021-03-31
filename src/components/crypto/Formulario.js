@@ -2,8 +2,8 @@ import React, {useEffect, useState} from 'react';
 import styled from 'styled-components/macro';
 import Error from './Error';
 
-import useMoneda from '../../hooks/useMoneda';
-import useCriptomoneda from '../../hooks/useCriptomoneda';
+import useMoneda from './hooks/useMoneda';
+import useCriptomoneda from './hooks/useCriptomoneda';
 import axios from 'axios';
 
 const Boton = styled.input`
