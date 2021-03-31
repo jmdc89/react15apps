@@ -1,10 +1,23 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Header from './Header';
 import Formulario from './Formulario';
 
 const News = () => {
 
     const [categoria, guardarCategoria] = useState('');
+    const [noticias, guardarNoticias] = useState([]);
+
+    useEffect(() => {
+        const consultarAPI = async () => {
+          const url = `https://newsapi.org/v2/top-headlines?country=es&category=${categoria}&apiKey=e2abd9e31c0d4f3aa782dbcaca44c9f3`;
+    
+          const respuesta = await fetch(url);
+          const noticias = await respuesta.json();
+    
+          guardarNoticias(noticias.articles);
+        }
+        consultarAPI();
+      }, [categoria]);
 
     return (
         <>

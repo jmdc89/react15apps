@@ -5,9 +5,6 @@ import useSelect from './hooks/useSelect';
 const Formulario = ({guardarCategoria}) => {
 
 
-
-    e2abd9e31c0d4f3aa782dbcaca44c9f3
-
     const OPCIONES = [
         { value: 'general', label: 'General'},
         { value: 'business', label: 'Negocios'},
@@ -30,7 +27,9 @@ const Formulario = ({guardarCategoria}) => {
     return (
         <div className={`${styles.buscador} row`}>
             <div className="col s12 m8 offset-m2">
-                <form>
+                <form
+                    onSubmit={buscarNoticias}
+                >
                     <h2 className={styles.heading}>Encuentra Noticias por Categoría</h2>
                     
                     <SelectNoticias />
