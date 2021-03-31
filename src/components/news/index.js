@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './Header';
+import Formulario from './Formulario';
 
 const News = () => {
     return (
@@ -9,7 +10,7 @@ const News = () => {
             />
 
             <div className="container white">
-                <h1>Formulario aqui</h1>
+                <Formulario />
             </div>
         </>
     );
