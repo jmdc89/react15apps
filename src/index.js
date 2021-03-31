@@ -6,6 +6,7 @@ import {GlobalStyles} from './global-styles';
 // import Insurance from "./components/insurance";
 // import BreakingBad from "./components/bbquote";
 // import Cotizador from "./components/crypto";
+import News from "./components/news";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -15,6 +16,7 @@ ReactDOM.render(
     {/* <Insurance/> */}
     {/* <BreakingBad/> */}
     {/* <Cotizador/> */}
+    <News/>
   </React.StrictMode>,
   document.getElementById('root')
 );
