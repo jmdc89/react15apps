@@ -1,8 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Header from './Header';
 import Formulario from './Formulario';
 
 const News = () => {
+
+    const [categoria, guardarCategoria] = useState('');
+
     return (
         <>
             <Header
@@ -10,7 +13,9 @@ const News = () => {
             />
 
             <div className="container white">
-                <Formulario />
+                <Formulario
+                    guardarCategoria={guardarCategoria}
+                />
             </div>
         </>
     );
