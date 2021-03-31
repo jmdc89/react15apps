@@ -35,4 +35,8 @@ const Noticia = ({noticia}) => {
      );
 }
 
+Noticia.propTypes = {
+    noticia: PropTypes.object.isRequired
+}
+
 export default Noticia;
